@@ -137,3 +137,4 @@ export function KnowledgeQuiz() {
     </div>
   );
 }
+
