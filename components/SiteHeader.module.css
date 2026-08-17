@@ -1,0 +1,133 @@
+.siteHeader {
+  overflow: visible;
+}
+
+.headerInner {
+  min-height: 72px;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav a {
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  color: #405047;
+  padding: 9px 10px;
+  border-radius: 9px;
+  transition: background .18s ease, color .18s ease;
+}
+
+.nav a:hover,
+.activeLink {
+  background: #edf2ee;
+  color: #12231a !important;
+}
+
+.menuButton {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid #dce4df;
+  border-radius: 12px;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(15, 47, 30, 0.06);
+}
+
+.menuButton span {
+  width: 18px;
+  height: 2px;
+  background: #12231a;
+  border-radius: 999px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.menuButtonOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+  .headerInner {
+    min-height: 64px;
+    padding: 0 14px;
+    gap: 16px;
+  }
+
+  .menuButton {
+    display: inline-flex;
+    margin-left: auto;
+    flex: none;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 14px;
+    right: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 10px;
+    background: rgba(247, 249, 246, 0.98);
+    border: 1px solid #dce4df;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(15, 47, 30, 0.16);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(.985);
+    transform-origin: top right;
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  }
+
+  .navOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 11px 12px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .nav {
+    grid-template-columns: 1fr;
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+  }
+}
