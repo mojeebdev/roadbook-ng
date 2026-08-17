@@ -1,32 +1,50 @@
+import { PlateVerifier } from "@/components/PlateVerifier";
 import { officialServices } from "@/data/content";
 
 export const metadata = {
   title: "Official Verification Hub",
-  description: "Jump directly to official Nigerian vehicle, licence and insurance verification services."
+  description: "Verify a Nigerian number plate inside Roadbook and use the correct official route for other vehicle records."
 };
 
 export default function VerifyPage() {
+  const otherServices = officialServices.filter((service) => service.title !== "Verify a number plate");
+
   return (
     <section className="section pageTop">
       <div className="pageIntro">
         <div className="eyebrow">Official verification hub</div>
-        <h1>Paper is not the database.</h1>
+        <h1>Check first. Then trust the paper.</h1>
         <p>
-          Use the official service behind the record. Roadbook does not proxy identity checks,
-          store vehicle numbers or ask you to paste sensitive IDs into our site.
+          Number-plate verification now works inside Roadbook using the public FRSC/NVIS checker.
+          For identity-heavy or authenticated services, Roadbook keeps the handoff explicit instead of pretending to be the issuing agency.
         </p>
       </div>
+
+      <PlateVerifier />
+
+      <div className="sectionHeading split" style={{ marginTop: 72 }}>
+        <div>
+          <div className="eyebrow">Other official checks</div>
+          <h2>Use the authority behind the record.</h2>
+        </div>
+        <p>
+          Some checks require a CAPTCHA, login, date of birth, policy ID or other sensitive information.
+          Those continue on the official service rather than being copied into Roadbook.
+        </p>
+      </div>
+
       <div className="verifyGrid">
-        {officialServices.map((service, index) => (
+        {otherServices.map((service, index) => (
           <a className="verifyCard" href={service.url} target="_blank" rel="noreferrer" key={service.title}>
             <span className="verifyNum">{String(index + 1).padStart(2, "0")}</span>
             <small>{service.agency}</small>
             <h2>{service.title}</h2>
             <p>{service.description}</p>
-            <b>Open official service ↗</b>
+            <b>Continue on official service ↗</b>
           </a>
         ))}
       </div>
+
       <div className="callout amber">
         <strong>Anti-scam rule</strong>
         <span>
