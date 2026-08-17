@@ -1,0 +1,291 @@
+.shell {
+  margin-top: 34px;
+  padding: 30px;
+  border: 1px solid #dce4df;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 18px 60px rgba(15, 47, 30, 0.07);
+}
+
+.headingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.headingRow h2 {
+  margin: 8px 0 8px;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.045em;
+}
+
+.headingRow p {
+  margin: 0;
+  max-width: 720px;
+  color: #617067;
+  line-height: 1.65;
+  font-size: 14px;
+}
+
+.kicker {
+  display: inline-flex;
+  color: #0d6b3d;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.sourceBadge {
+  flex: none;
+  padding: 9px 11px;
+  border-radius: 999px;
+  background: #e8f4ed;
+  color: #0d6b3d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.form {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #f7f9f6;
+  border: 1px solid #e1e8e3;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.inputRow input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 1px solid #cfdad2;
+  border-radius: 12px;
+  background: #fff;
+  color: #12231a;
+  outline: none;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.inputRow input:focus {
+  border-color: #0d6b3d;
+  box-shadow: 0 0 0 3px rgba(13, 107, 61, .1);
+}
+
+.inputRow button {
+  min-height: 54px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  background: #0d6b3d;
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.inputRow button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.form small {
+  display: block;
+  margin-top: 9px;
+  color: #718077;
+  font-size: 11px;
+}
+
+.result {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #d8e3dc;
+  background: #fafcfb;
+}
+
+.resultTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.resultTop span {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.resultTop b {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f4ed;
+  color: #0d6b3d;
+}
+
+.result h3 {
+  margin: 15px 0 0;
+  max-width: 760px;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.result p {
+  margin: 10px 0 0;
+  color: #617067;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.result a {
+  display: inline-flex;
+  margin-top: 14px;
+  color: #0d6b3d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.assigned {
+  background: #f2faf5;
+  border-color: #badbc7;
+}
+
+.unassigned {
+  background: #fffaf0;
+  border-color: #ecd49d;
+}
+
+.unassigned .resultTop b,
+.unknown .resultTop b {
+  background: #fff4df;
+  color: #9a5a00;
+}
+
+.invalid,
+.error {
+  background: #fff6f4;
+  border-color: #e8c5bf;
+}
+
+.invalid .resultTop b,
+.error .resultTop b {
+  background: #fff0ed;
+  color: #a3392f;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 20px 0 0;
+  overflow: hidden;
+  border: 1px solid #dce4df;
+  border-radius: 12px;
+  background: #dce4df;
+}
+
+.details > div {
+  padding: 14px;
+  background: #fff;
+}
+
+.details dt {
+  color: #718077;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.details dd {
+  margin: 6px 0 0;
+  color: #12231a;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 16px;
+  color: #718077;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.unknownNote {
+  padding-top: 4px;
+}
+
+.privacyNote {
+  display: flex;
+  gap: 12px 20px;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e4eae6;
+}
+
+.privacyNote strong {
+  font-size: 11px;
+}
+
+.privacyNote span {
+  color: #718077;
+  font-size: 11px;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .shell {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .headingRow,
+  .privacyNote {
+    flex-direction: column;
+  }
+
+  .sourceBadge {
+    order: -1;
+  }
+
+  .inputRow {
+    grid-template-columns: 1fr;
+  }
+
+  .inputRow button {
+    width: 100%;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .privacyNote span {
+    text-align: left;
+  }
+}
