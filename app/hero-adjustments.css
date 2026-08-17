@@ -1,0 +1,11 @@
+/* Desktop hero fit adjustment.
+   Keeps the full hero comfortably inside common laptop viewports
+   without changing the mobile layout. */
+@media (min-width: 1021px) {
+  .hero {
+    min-height: 620px;
+    margin-top: 12px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
